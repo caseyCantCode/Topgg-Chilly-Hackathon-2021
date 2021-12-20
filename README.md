@@ -2,6 +2,10 @@
 
 This is a submission made for [top.gg](https://top.gg)'s 2021 Chilly Hackathon.
 
+## What we won!
++ Most Creative
++ Best Overall
+
 ## The Team
 
 - [@DanPlayz0](https://github.com/DanPlayz0)
