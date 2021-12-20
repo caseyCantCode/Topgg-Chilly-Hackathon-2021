@@ -12,7 +12,7 @@ const toys = [
 module.exports = {
   name: "guess-the-gift",
   description: "Try to guess what's inside the gift!",
-  category: "games",
+  category: "info",
   run: async (ctx) => {
     const selection = toys[Math.floor(Math.random() * toys.length)];
 
@@ -29,7 +29,7 @@ module.exports = {
     collector.on("collect", (message) => {
       if (message.content.toLowerCase() === selection) {
         ctx.interaction.followUp("You guessed the present good job!");
-        return collector.stop();
+        return collector.stop("notFail");
       }
 
       return collector.stop("fail");
@@ -40,10 +40,6 @@ module.exports = {
         return ctx.interaction.followUp(
           `You didn't name the present correctly it was \`${selection}\`.`
         );
-
-      return ctx.interaction.followUp(
-        `You ran out of time... The correct present was \`${selection}\`.`
-      );
     });
   },
 };
